@@ -1,8 +1,18 @@
 Rails.application.routes.draw do
 
 
+  # get 'reviews/new'
+
+  # get 'reviews/create'
+
   Rails.application.routes.draw do
-    resources :restaurants
+  # get 'reviews/new'
+
+  # get 'reviews/create'
+
+    resources :restaurants do
+      resources :reviews, only: [:new, :create]
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

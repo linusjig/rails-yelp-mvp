@@ -29,5 +29,26 @@
   <%= "*" * @restaurant.stars %>
 </p>
 
+<hr/>
+<table>
+  <thead>
+    <tr>
+      <th>Rating</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reviews.each do |review| %>
+      <tr>
+        <td><%= "*" * review.rating %></td>
+        <td><%= review.content %></td>
+      </tr>
+      <hr/>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Add review', new_restaurant_review_path(@restaurant) %>
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
 <%= link_to 'Back', restaurants_path %>

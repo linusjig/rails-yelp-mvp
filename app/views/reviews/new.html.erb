@@ -1,0 +1,7 @@
+<h1>Create a new Review</h1>
+creating a review in the scope of a restaurant
+<%= form_for [@restaurant, @review] do |f| %>
+  <%= f.text_field :content %>
+  <%= f.select :rating, [[0],[1],[2],[3],[4],[5]] %>
+  <%= f.submit %>
+<% end %>
