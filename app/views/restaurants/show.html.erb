@@ -6,8 +6,17 @@
 </p>
 
 <p>
+  <strong>Category:</strong>
+  <%= @restaurant.category %>
+</p>
+<p>
   <strong>Address:</strong>
   <%= @restaurant.address %>
+</p>
+
+<p>
+  <strong>Phone_number:</strong>
+  <%= @restaurant.phone_number %>
 </p>
 
 <p>
@@ -17,7 +26,7 @@
 
 <p>
   <strong>Stars:</strong>
-  <%= @restaurant.stars %>
+  <%= "*" * @restaurant.stars %>
 </p>
 
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
