@@ -1,14 +1,5 @@
-Rails.application.routes.draw do
-
-
-  # get 'reviews/new'
-
-  # get 'reviews/create'
-
   Rails.application.routes.draw do
-  # get 'reviews/new'
-
-  # get 'reviews/create'
+    root 'restaurants#index'
 
     resources :restaurants do
       resources :reviews, only: [:new, :create]
@@ -69,4 +60,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
+

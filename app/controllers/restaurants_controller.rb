@@ -12,6 +12,7 @@ class RestaurantsController < ApplicationController
   # GET /restaurants/1
   # GET /restaurants/1.json
   def show
+    # Get all the reviews so that we can iterate over the reviews in show.html
     @reviews = Review.all
   end
 

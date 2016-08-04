@@ -9,18 +9,25 @@ class ReviewsController < ApplicationController
 
   def create
     @review = @restaurant.reviews.create(review_params)
-    redirect_to restaurant_path(@restaurant)
+    if @review.save
+      redirect_to restaurant_path(@restaurant)
+    else
+      #if it doesn't save, show the form in new again!
+      render :new
+    end
   end
-end
 
-private
+  # Private goes inside ReviewaController!!!
+  private
 
-def find_restaurant
-  # because the id from restaurant is an external key, we need to pass
-  # to restaurants :retaurants_id
-  @restaurant = Restaurant.find(params[:restaurant_id])
-end
+  def find_restaurant
+    # because the id from restaurant is an external key, we need to pass
+    # to restaurants :retaurants_id
+    @restaurant = Restaurant.find(params[:restaurant_id])
+  end
 
-def review_params
-  params.require(:review).permit(:content, :rating)
+  def review_params
+    params.require(:review).permit(:content, :rating)
+  end
+
 end

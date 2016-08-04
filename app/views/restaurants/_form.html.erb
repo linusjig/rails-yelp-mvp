@@ -6,7 +6,7 @@
     <%= f.input :address %>
     <%= f.input :phone_number %>
     <%= f.input :description %>
-    <%= f.input :category %>
+    <%= f.select :category, Restaurant::CATEGORIES, promt: "Categories" %>
     <%= f.input :stars %>
   </div>
 

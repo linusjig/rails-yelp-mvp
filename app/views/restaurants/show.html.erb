@@ -29,22 +29,19 @@
   <%= "*" * @restaurant.stars %>
 </p>
 
-<hr/>
 <table>
   <thead>
-    <tr>
       <th>Rating</th>
       <th>Description</th>
     </tr>
   </thead>
 
   <tbody>
-    <% @reviews.each do |review| %>
+    <% @restaurant.reviews.each do |review| %>
       <tr>
         <td><%= "*" * review.rating %></td>
         <td><%= review.content %></td>
       </tr>
-      <hr/>
     <% end %>
   </tbody>
 </table>
